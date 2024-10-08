@@ -22,12 +22,13 @@ function MealsOverviewScreen({ route, navigation }) {
     navigation.setOptions({
       title: categoryTitle,
     });
-  }, [categoryId,navigation]);
+  }, [categoryId, navigation]);
 
   function renderMealItem(itemData) {
     const item = itemData.item;
 
     const mealItemProps = {
+      id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       duration: item.duration,
