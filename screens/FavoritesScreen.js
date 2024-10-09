@@ -1,7 +1,12 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import {useContext} from 'react';
+import { FavoritesContext } from "../store/context/favorites-context";
 
 function FavoritesScreen(){
-    return <Text>The FavoritesScreen</Text>
+    const {ids,removeFavorite}=useContext(FavoritesContext)
+    return <View>
+        {ids.map(id=> <Text key={id}>{id}</Text>)}
+    </View>
 }
 
 export default FavoritesScreen;
